@@ -1,4 +1,4 @@
-// components/history-card.tsx
+
 "use client";
 import { useState } from 'react';
 import { Card, CardContent } from './card';

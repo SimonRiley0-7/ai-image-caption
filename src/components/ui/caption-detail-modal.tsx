@@ -1,4 +1,3 @@
-// components/caption-detail-modal.tsx
 "use client";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogClose } from './dialog';
 import { Button } from './button';

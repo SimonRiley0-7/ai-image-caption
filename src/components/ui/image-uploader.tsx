@@ -26,7 +26,6 @@ export default function ImageUploader({ onCaptionGenerated }: { onCaptionGenerat
     }
   };
 
-  // In ImageUploader.tsx - modify the handleSubmit function
 
 const handleSubmit = async () => {
   if (!image || !imagePreview) {
@@ -39,11 +38,9 @@ const handleSubmit = async () => {
   try {
     setUploadStatus('Uploading image...');
     
-    // Create FormData for the server-side upload
     const formData = new FormData();
     formData.append('file', image);
     
-    // Upload to our server-side API
     const uploadResponse = await fetch('/api/upload', {
       method: 'POST',
       body: formData
@@ -56,7 +53,6 @@ const handleSubmit = async () => {
 
     const uploadData = await uploadResponse.json();
     
-    // Log to verify we have the Cloudinary URL
     console.log('Uploaded image data:', uploadData);
     
     if (!uploadData.url) {
@@ -65,7 +61,6 @@ const handleSubmit = async () => {
     
     setUploadStatus('Generating caption...');
     
-    // Call API to generate caption with the imageUrl from Cloudinary
     const captionResponse = await fetch('/api/caption', {
       method: 'POST',
       headers: {
@@ -73,7 +68,7 @@ const handleSubmit = async () => {
       },
       body: JSON.stringify({
         imageBase64: imagePreview,
-        imageUrl: uploadData.url, // This should be the Cloudinary URL
+        imageUrl: uploadData.url, 
         publicId: uploadData.publicId
       }),
     });

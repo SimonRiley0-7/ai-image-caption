@@ -18,15 +18,12 @@ interface CaptionDocument {
     createdAt: Date;
 }
 
-// Add this near the getCaptionHistory function
 async function getCaptionHistory(userId: string) {
     await connectToDB();
     
     const captions = await Caption.find({ userId })
     .sort({ createdAt: -1 })
     .lean() as unknown as CaptionDocument[];
-      
-    // Debug log to see what URLs are coming from the database
     console.log('Retrieved captions:', captions.map(c => ({
       id: c._id.toString(),
       imageUrl: c.imageUrl,

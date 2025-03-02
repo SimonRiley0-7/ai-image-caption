@@ -1,9 +1,7 @@
-// app/api/upload/route.ts
 import { NextRequest, NextResponse } from 'next/server';
 import { auth } from '@clerk/nextjs/server';
 import { v2 as cloudinary } from 'cloudinary';
 
-// Configure Cloudinary
 cloudinary.config({ 
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME, 
   api_key: process.env.CLOUDINARY_API_KEY, 
@@ -13,27 +11,21 @@ cloudinary.config({
 
 export async function POST(req: NextRequest) {
   try {
-    // Check authentication
     const { userId } = await auth();
     if (!userId) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    // Get the form data with the image
     const formData = await req.formData();
     const file = formData.get('file') as File;
     
     if (!file) {
       return NextResponse.json({ error: 'No file provided' }, { status: 400 });
     }
-
-    // Convert the file to a buffer
     const buffer = Buffer.from(await file.arrayBuffer());
     
-    // Create a unique folder path based on the user ID
     const folderPath = `captions/${userId}`;
     
-    // Upload to Cloudinary
     const uploadPromise = new Promise((resolve, reject) => {
       const uploadStream = cloudinary.uploader.upload_stream(
         {
@@ -51,7 +43,6 @@ export async function POST(req: NextRequest) {
     
     const result = await uploadPromise as { secure_url: string, public_id: string };
     
-    // Return the Cloudinary URL and other details
     return NextResponse.json({ 
         url: result.secure_url,
         publicId: result.public_id

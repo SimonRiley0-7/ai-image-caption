@@ -1,7 +1,5 @@
-// models/caption.js
 import mongoose from 'mongoose';
 
-// Define the schema first
 const captionSchema = new mongoose.Schema({
     userId: {
         type: String,
@@ -25,7 +23,6 @@ const captionSchema = new mongoose.Schema({
     }
 });
 
-// Create the model with the schema
 const Caption = mongoose.models.Caption || mongoose.model('Caption', captionSchema);
 
 export default Caption;
