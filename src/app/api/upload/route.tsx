@@ -49,7 +49,7 @@ export async function POST(req: NextRequest) {
       uploadStream.end(buffer);
     });
     
-    const result = await uploadPromise as any;
+    const result = await uploadPromise as { secure_url: string, public_id: string };
     
     // Return the Cloudinary URL and other details
     return NextResponse.json({ 
