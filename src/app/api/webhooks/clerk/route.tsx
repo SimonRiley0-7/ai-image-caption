@@ -15,5 +15,11 @@ export async function POST(req: Request) {
   const payload = await req.json();
   const { type } = payload;
   await connectToDB();
+  if (type === 'user.created') {
+   
+  } else if (type === 'user.deleted') {
+
+  }
+
   return NextResponse.json({ message: 'Webhook received' }, { status: 200 });
 }
