@@ -9,10 +9,7 @@ export default function CaptionDisplay({ caption }: { caption: string }) {
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(caption);
-    toast({
-      title: 'Copied to clipboard',
-      description: 'Caption has been copied to clipboard.',
-    });
+    toast('Caption has been copied to clipboard.');
   };
 
   if (!caption) return null;
