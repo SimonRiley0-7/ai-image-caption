@@ -12,7 +12,7 @@ interface HistoryCardProps {
   date: string;
 }
 
-export default function HistoryCard({ id, imageUrl, caption, date }: HistoryCardProps) {
+export default function HistoryCard({ imageUrl, caption, date }: HistoryCardProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (

@@ -10,7 +10,7 @@ import { ArrowLeft } from 'lucide-react';
 import mongoose from 'mongoose';
 
 interface CaptionDocument {
-    _id: mongoose.Types.ObjectId | String;
+    _id: mongoose.Types.ObjectId | string;
     userId: string;
     imageId: string;
     imageUrl: string;

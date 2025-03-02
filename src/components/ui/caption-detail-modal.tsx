@@ -2,7 +2,7 @@
 "use client";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogClose } from './dialog';
 import { Button } from './button';
-import { X, Copy } from 'lucide-react';
+import { Copy } from 'lucide-react';
 import Image from 'next/image';
 import { useState } from 'react';
 
