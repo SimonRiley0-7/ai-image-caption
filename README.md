@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+AI Image Caption Generator
 
-## Getting Started
+An AI-powered image caption generator built using Next.js, MongoDB, ShadCN UI, and Clerk authentication, leveraging the Gemini API for generating captions. Users can upload images, generate captions, and view their caption history.
 
-First, run the development server:
+Features
 
-```bash
+AI-Powered Captions: Uses the Gemini API to generate accurate and contextual image captions.
+
+User Authentication: Secure login and signup via Clerk authentication.
+
+History Tracking: User-generated captions are stored in MongoDB for later viewing.
+
+Modern UI: Built with ShadCN UI for a clean and interactive experience.
+
+Next.js Framework: Optimized performance and seamless routing.
+
+
+Tech Stack
+
+Frontend: Next.js, ShadCN UI
+
+Backend: Next.js API routes, MongoDB
+
+Authentication: Clerk
+
+AI Model: Gemini API
+
+
+Installation
+
+1. Clone the repository:
+
+git clone https://github.com/yourusername/ai-image-caption-generator.git
+cd ai-image-caption-generator
+
+
+2. Install dependencies:
+
+npm install
+
+
+3. Set up environment variables in a .env.local file:
+
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_key
+CLERK_SECRET_KEY=your_clerk_secret_key
+GEMINI_API_KEY=your_gemini_api_key
+MONGODB_URI=your_mongodb_connection_string
+
+
+4. Run the development server:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+5. Open http://localhost:3000 in your browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+Usage
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Sign up or log in using Clerk authentication.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+2. Upload an image.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. Click the "Generate Caption" button.
+
+
+4. View your caption history.
+
+
+
+Future Enhancements
+
+Multi-language support for captions.
+
+Image filtering and enhancements.
+
+Downloadable captions.
+
+
+Contributing
+
+Feel free to submit pull requests or report issues in the repository.
+
+License
+
+This project is licensed under the MIT License.
+
