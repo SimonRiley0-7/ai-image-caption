@@ -83,8 +83,3 @@ Downloadable captions.
 Contributing
 
 Feel free to submit pull requests or report issues in the repository.
-
-License
-
-This project is licensed under the MIT License.
-
